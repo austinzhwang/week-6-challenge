@@ -15,6 +15,7 @@
     <div class="row">
         <div class="col-xs-3 filters">
             <h6 class="text-muted" style="letter-spacing: 2px;">Filter</h6>
+            <br>
             <ul class="nav flex-column" th:each="category : ${categories}">
                 <li class="nav-item">
                     <a class="nav-link active" href="#" th:text="${category.categoryName}"></a>
@@ -30,7 +31,7 @@
                         <p class="card-text" style="font-weight: 400;" th:text="${car.model}"></p>
                         <img class="img-fluid" th:src="${car.img}">
                         <div style="height:20px;"></div>
-                        <a th:href="@{/details/{id}(id=${car.id})}" class="btn btn-primary mx-auto d-block">Modify</a>
+                        <a th:href="@{/details/{id}(id=${car.id})}" class="btn btn-primary mx-auto d-block">Details</a>
                     </div>
                 </div>
             </div>

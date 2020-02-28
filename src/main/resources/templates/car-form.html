@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CarsList | Add Car</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" tye="text/css" href="./css/styles.css">
+</head>
+<body>
+<nav th:replace="base :: navlinks"></nav>
+<div th:replace="base :: bg-img"></div>
+
+<div class=jumbotron>
+    <form th:action="@{/process-car}" th:object="${car}" method="post" enctype="multipart/form-data">
+        <input type="hidden" th:field="*{id}">
+        <div class="form-group">
+            <label for="make">Make</label>
+            <input type="text" id="make" class="form-control" placeholder="Enter make of car" th:field="*{make}">
+        </div>
+        <div class="form-group">
+            <label for="model">Model</label>
+            <input type="text" id="model" class="form-control" placeholder="Enter model of car" th:field="*{model}">
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" id="year" class="form-control" placeholder="Enter year car was built" th:field="*{year}">
+        </div>
+        <div class="form-group">
+            <label for="color">Color</label>
+            <input type="text" id="color" class="form-control" placeholder="Enter color of car" th:field="*{color}">
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" id="price" class="form-control" placeholder="Enter price of car" th:field="*{price}">
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category</label>
+            <select id="category" class="form-control" th:field="*{category}">
+                <div th:each="category : ${categories}">
+                    <option th:value="${category.id}" th:text="${category.categoryName}"></option>
+                </div>
+            </select>
+        </div>
+        <input type="file" name="file"><br /><br />
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

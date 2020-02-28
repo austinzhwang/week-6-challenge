@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+}
+
+.navbar-brand {
+    border: 1px solid rgba(0,0,0,.9);
+    border-radius: 50%;
+    padding: 0px 4px;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("https://res.cloudinary.com/austinzhwang/image/upload/v1582916073/car-bg_uhwpaw.jpg");
+
+    /* Half height */
+    height: 50vh;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text-wrapper {
+    padding: 8px 10px;
+    border: 2px solid #fff;
+    color: #fff;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.home-container {
+    margin: 50px;
+}
+
+.filters {
+    margin-right: 50px;
+}

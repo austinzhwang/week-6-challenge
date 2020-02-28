@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CarsList | Car Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" tye="text/css" href="./css/styles.css">
+</head>
+<body>
+<nav th:replace="base :: navlinks"></nav>
+
+<div class="card mx-auto"  style="width: 36rem; margin-top: 100px">
+    <div class="card-body">
+        <div class="d-inline-block">
+            <h5 class="card-title" th:text="${car.make}"></h5>
+            <h6 class="card-subtitle mb-2 text-muted" th:text="${car.model}"></h6></span>
+            <p class="card-text">Category: <span th:text="${car.category.categoryName}"></span></p>
+            <p class="card-text">Year: <span th:text="${car.year}"></span></p>
+            <p class="card-text">Color: <span th:text="${car.color}"></span></p>
+            <p class="card-text">Price: $<span th:text="${car.price}"></span></p>
+            <a th:href="@{/update/{id}(id=${car.id})}" class="card-link"><button class="btn btn-primary">Update</button></a>
+            <a th:href="@{/delete/{id}(id=${car.id})}" class="card-link"><button class="btn btn-danger">Delete</button></a>
+        </div>
+        <div class="d-inline-block">
+            <img class="img-fluid" th:src="${car.img}">
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -5,26 +5,23 @@
     <title>CarsList | Car Details</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" tye="text/css" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
 <nav th:replace="base :: navlinks"></nav>
 
 <div class="card mx-auto"  style="width: 36rem; margin-top: 100px">
     <div class="card-body">
-        <div class="d-inline-block">
-            <h5 class="card-title" th:text="${car.make}"></h5>
-            <h6 class="card-subtitle mb-2 text-muted" th:text="${car.model}"></h6></span>
-            <p class="card-text">Category: <span th:text="${car.category.categoryName}"></span></p>
-            <p class="card-text">Year: <span th:text="${car.year}"></span></p>
-            <p class="card-text">Color: <span th:text="${car.color}"></span></p>
-            <p class="card-text">Price: $<span th:text="${car.price}"></span></p>
-            <a th:href="@{/update/{id}(id=${car.id})}" class="card-link"><button class="btn btn-primary">Update</button></a>
-            <a th:href="@{/delete/{id}(id=${car.id})}" class="card-link"><button class="btn btn-danger">Delete</button></a>
-        </div>
-        <div class="d-inline-block">
-            <img class="img-fluid" th:src="${car.img}">
-        </div>
+        <h5 class="card-title" th:text="${car.make}"></h5>
+        <h6 class="card-subtitle mb-2 text-muted" th:text="${car.model}"></h6></span>
+        <p class="card-text">Category: <span th:text="${car.category.categoryName}"></span></p>
+        <p class="card-text">Year: <span th:text="${car.year}"></span></p>
+        <p class="card-text">Color: <span th:text="${car.color}"></span></p>
+        <p class="card-text">Price: $<span th:text="${car.price}"></span></p>
+        <img class="img-fluid" th:src="${car.img}">
+        <div style="height:20px;"></div>
+        <a th:href="@{/update/{id}(id=${car.id})}" class="card-link"><button class="btn btn-primary">Update</button></a>
+        <a th:href="@{/delete/{id}(id=${car.id})}" class="card-link"><button class="btn btn-danger">Delete</button></a>
     </div>
 </div>
 

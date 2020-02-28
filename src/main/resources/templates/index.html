@@ -26,7 +26,10 @@
             <div th:each="car : ${cars}">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
+                        <h6 class="card-text"th:text="${car.make}"></h6>
+                        <p class="card-text" style="font-weight: 400;" th:text="${car.model}"></p>
                         <img class="img-fluid" th:src="${car.img}">
+                        <div style="height:20px;"></div>
                         <a th:href="@{/details/{id}(id=${car.id})}" class="btn btn-primary mx-auto d-block">Modify</a>
                     </div>
                 </div>
